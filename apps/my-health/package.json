@@ -1,0 +1,50 @@
+{
+  "name": "@micro/my-health",
+  "description": "Microfrontend for my health",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve",
+    "prebuild": "rimraf dist",
+    "build": "webpack --mode production",
+    "serve": "serve dist -p 3400"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@micro/config": "*",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.38",
+    "@types/react": "^18.0.12",
+    "@types/react-dom": "^18.0.5",
+    "react-scripts": "5.0.1",
+    "rimraf": "^3.0.2",
+    "serve": "^13.0.2",
+    "typescript": "^4.7.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "react-utils",
+  "version": "1.0.0",
+  "description": "React utils",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify"
+  },
+  "dependencies": {
+    "react": "^18.1.0",
+    "tsup": "^6.1.0",
+    "typescript": "^4.7.3"
+  }
+}
