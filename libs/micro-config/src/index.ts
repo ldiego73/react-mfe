@@ -10,6 +10,7 @@ interface WithFederationProps {
   port: number;
   open: boolean;
   liveReload: boolean;
+  isShell: boolean;
 }
 
 const { ModuleFederationPlugin } = container;
@@ -31,6 +32,7 @@ export function WithFederation({
   port = 3000,
   open = false,
   liveReload = false,
+  isShell = false,
 }: WithFederationProps) {
   const plugins: any[] = [
     new EnvironmentPlugin({ BUILD_DATE: new Date().toDateString() }),
@@ -51,10 +53,12 @@ export function WithFederation({
   plugins.push(
     new ModuleFederationPlugin({
       name,
-      filename: `${URL_PATH}.js`,
-      exposes: {
-        "./index": "./src/main.ts",
-      },
+      filename: !isShell ? `${URL_PATH}.js` : undefined,
+      exposes: !isShell
+        ? {
+            "./index": "./src/main.ts",
+          }
+        : undefined,
       remotes: getRemotes(remotes),
       shared: {
         ...dependencies,
