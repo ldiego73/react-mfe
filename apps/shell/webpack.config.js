@@ -5,6 +5,7 @@ module.exports = WithFederation({
   name: "shell",
   open: true,
   dependencies: deps,
+  liveReload: true,
   remotes: {
     "home": "http://localhost:3100",
     "appointment": "http://localhost:3200",
