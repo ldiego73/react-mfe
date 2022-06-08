@@ -1,5 +1,5 @@
 import React from "react";
-import { MedicalAdvice } from "./components";
+import { MedicalAdvice } from "../components";
 
 export function App() {
   return (
